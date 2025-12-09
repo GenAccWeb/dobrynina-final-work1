@@ -1,21 +1,5 @@
-@font-face {
-    font-family: 'Inconsolata';
-    src: url('../font/Inconsolata-Regular.woff') format('.woff'),
-    url('../font/Inconsolata-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Italiana';
-    src: url('font/Italiana-Regular.eot');
-    src: local('Italiana'), local('Italiana-Regular'),
-        url('Italiana-Regular.woff2') format('woff2'),
-        url('Italiana-Regular.woff') format('woff'),
-        url('Italiana-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Marck+Script&display=swap');
+
 /*reset*/
 * {
     margin: 0;
@@ -29,6 +13,7 @@ html, body {
 /*типографика*/
 nav {
     text-align: right;
+    width: 100%;
 }
 .nav {
     text-decoration: none;
@@ -38,16 +23,17 @@ nav {
     margin: 10px;
 }
 h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Italiana", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     text-align: center;
-    font-size: 10vw; /*для резинового текста*/
-    font-weight: normal;
-    letter-spacing: 5vw;
+    font-size: 1500%;
     color: #612D07;
+    letter-spacing: 50px;
 }
 h2 {
     color: black;
-    font-size: 4vw;
+    font-size: 55px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: lighter;
 }
@@ -56,7 +42,7 @@ h4 {
     font-size: 25px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: normal;
-    margin-bottom: 20px;
+    
 }
 p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -90,49 +76,42 @@ td {
 
 /*стили для блоков*/
 nav {
-   z-index: 20;
    background-color: white;
    margin: 10px;
 }
 main {
     background-color: #faf7ee;
+    width: 100%;
+    position: static;
 }
 /*блок обо мне*/
 #about {
-    position: static;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .heading1 {
+    width: 80%;
     position: absolute;
     z-index: 12;
     left: 3%;
-    right: 3%;
-    overflow: hidden 
-}
-.about {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: nowrap;
-    max-width: 100%;
-    height: 800px;
-    
+    right: 3%;    
 }
 .imga {
-    position: absolute;
-    top: 150px;
-    left: 80px;
     z-index: 10;
-    max-width: 30vw;
+    width: 60%;
+    margin-top: 100px;
 }
 .avatar {
-    width: 96% ;
+    width: 700px ;
 }
 .text {
-    position: absolute;
+    margin-top: 200px;
     padding: 10px;
-    max-width: 45%;
-    margin-top: 180px;
-    margin-left: 650px;
+    width: 70%; 
+    
 }
 .hello {
     margin-top: 20px;
@@ -144,12 +123,12 @@ main {
 
 /*блок навыки*/
 #skils {
-    position: static;
-    margin: 50px;
+    width: 100%;
+    margin: 30px;
 }
 .heading2 {
     text-align: center;
-    margin: 50px;
+    margin: 10px;
 }
 .skils {
     display: flex;
@@ -159,7 +138,7 @@ main {
     width: 280px;
 }
 .logo {
-    width: 3vw;
+    width: 55px;
 }
 .name {
     column-count: 2; /*разбить текст на колонки*/
@@ -208,7 +187,7 @@ main {
     background-color: white;
     margin-top: 20px;
     margin-bottom: 20px;
-    height: 650px;
+    
 }
 .heading4 {
     margin-left: 80px;
@@ -228,25 +207,25 @@ td {
 }
 .future {
     margin: 30px;
-    position: static;
+    width: 100%;
+    background-color: white;
 }
 .description {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-top: 50px;
+    justify-content: flex-start;
+    width: 100%;
 }
 .blok {
     width: 100px;
     height: 20px;
     background-color: #f1e6c5;
-    position: relative;
-    margin-left: 50px;
+    margin-left: 20px;
 }
 .descrip {
-    position: absolute;
+    display: inline-block;
     left: 200px;
-    width: 70%;
+    width: 90%;
 }
  
 /*контакты*/
@@ -263,7 +242,7 @@ td {
     margin-left: 50px;
 }
 .logo2 {
-    width: 3vw;
+    width: 55px;
 }
 .logo2:hover {
     transform: scale(1.2); /*увеличение без сдвига соседних*/
@@ -282,71 +261,92 @@ footer {
     margin-right: 20px;
 }
 
-@media (min-width: 0) and (max-width: 900px) {
+@media (min-width: 0) and (max-width: 500px) {
+    nav {
+        text-align: center;
+    }
     .nav {
-        font-size: 15px;
-        padding: 12px;
-        margin: 6px;
+        font-size: 13px;
+        padding: 5px;
+        margin: 2px;    
     }
     h1 {
-        text-align: center;   
+        font-size: 190%; 
+        letter-spacing: 28px; 
+        font-weight: bold; 
+    }
+    h2 {
+        font-size: 20px;
     }
     h4 {
-        font-size: 18px;
-        margin-bottom: 14px;
+        font-size: 13px;
+        margin-bottom: 2px;
     }
     p {
-        font-size: 14px;
+        font-size: 12px;
         padding: 2px;
+    }
+    .name p {
+        font-size: 10px;
     }
     li {
-        font-size: 16px;
+        font-size: 12px;
         padding: 2px;
-        margin-left: 150px;
+        margin-left: 20%;
     }
     td {
-        font-size: 16px;
+        font-size: 12px;
         padding: 2px;
     }
     .nav1 {
-        font-size: 16px;
+        font-size: 12px;
     }
-    nav {
-        margin: 6px;
+    
+    main {
+        width: 100%;
     }
-    .about {
-        height: 400px;
-        max-width: 100%;
-        justify-content: space-around;
+    .heading1 {
+        width: 90%;
+    }
+    #about {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start ;
     }
     .imga {
-        top: 90px;
-        left: 40px;
+        margin-top: 20px;
+        width: 80%;    
     }
     .avatar {
-        width: 110% ;
+        width:90%;
     }
     .text {
         padding: 8px;
-        margin-top: 100px;
-        margin-left: 240px;
-        max-width: 50%;
+        margin-top: 25px;
+        width: 60%;
     }
     .hello {
-        margin-top: 15px;
-        margin-bottom: 25px;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
     .dopeducation {
-        margin-top: 25px;
+        margin-top: 5px;
     }
     #skils {
-        margin: 40px;
+        margin: 5px;
     }
     .heading2 {
-        margin: 40px;
+        margin: 5px;
     }
     .skils {
-        justify-content: space-evenly;
+        justify-content: center;
+    }
+    .logo {
+        width: 15px;
+    }
+    .logo2 {
+        width: 20px;
     }
     .work {
         width: 240px;
@@ -367,9 +367,9 @@ footer {
         margin: 3px;
     }
     #exper {
-        height: 620px;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 100%;
     }
     .heading4 {
         margin-left: 30px;
@@ -378,19 +378,22 @@ footer {
         margin: 10px;
     }
     table {
-        border-spacing: 5px 5px;
-        margin-left: 30px;
+        border-spacing: 2px 2px;
+        margin-left: 20px;
+        width: 90%;
+    }
+    .td1 {
+        width: 13%;
     }
     td {
         padding: 2px;
     }
     .future {
-        margin: 20px;
-        max-width: 100%;
+        margin: 10px;
+        width: 95%;
     }
     .description {
-        margin-top: 60px;
-        max-width: 100%;
+        width: 100%;
     }
     .blok {
         width: 60px;
@@ -401,12 +404,17 @@ footer {
         left: 100px;
     }
     .contacts {
-        padding: 15px;
+        padding: 5px;
     }
     .nav1 {
-        margin-right: 15px;
+        margin-right: 10px;
+    }
+
+    html, body {
+        width: 100%;
+    }
+    .links {
+        margin-left: 30px;
     }
 
 }    
-
-
